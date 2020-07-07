@@ -34,7 +34,7 @@
   version = "v1.10.10"
 
 [[projects]]
-  digest = "1:fcd9799acf2bd6e771d0628b85a12ada83acf375cb189cc99f11407a666acb9a"
+  digest = "1:e827ef8234fc359be2b0aa0102918e593c987009a19cdfe8f55960355f35311c"
   name = "github.com/xitongsys/parquet-go"
   packages = [
     "common",
@@ -47,7 +47,6 @@
     "schema",
     "source",
     "types",
-    "writer",
   ]
   pruneopts = "UT"
   revision = "0977660f0d299ef3d2b541c6626c6ed73c4f6ce7"
@@ -66,9 +65,7 @@
   analyzer-version = 1
   input-imports = [
     "github.com/xitongsys/parquet-go-source/local",
-    "github.com/xitongsys/parquet-go/parquet",
     "github.com/xitongsys/parquet-go/reader",
-    "github.com/xitongsys/parquet-go/writer",
   ]
   solver-name = "gps-cdcl"
   solver-version = 1
