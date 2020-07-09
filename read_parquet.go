@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+	"go-parquet_tool/schematool"
 	"log"
 
 	"github.com/xitongsys/parquet-go-source/local"
@@ -20,16 +22,20 @@ func main() {
 		return
 	}
 
-	columnNum := pr.SchemaHandler.GetColumnNum()
+	//columnNum := pr.SchemaHandler.GetColumnNum()
 	//log.Println(columnNum)
 
-	for i := 0; int64(i) < columnNum; i++ {
-		exColumnName := pr.SchemaHandler.GetExName(i)
-		inColumnName := pr.SchemaHandler.GetInName(i)
+	// for i := 0; int64(i) < columnNum; i++ {
+	// 	exColumnName := pr.SchemaHandler.GetExName(i)
+	// 	inColumnName := pr.SchemaHandler.GetInName(i)
 
-		log.Println(exColumnName)
-		log.Println(inColumnName)
-	}
+	// 	log.Println(exColumnName)
+	// 	log.Println(inColumnName)
+	// }
+
+	schemaTree := schematool.CreateSchemaTree(pr.SchemaHandler.SchemaElements)
+
+	fmt.Printf("%s", schemaTree.Root.OutputJsonSchema())
 
 	// num := int(pr.GetNumRows())
 
